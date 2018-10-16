@@ -1,1 +1,1 @@
-<?php print 'Vakaris!'; ?>
+<?php print 'Dope website'; ?>
