@@ -1,13 +1,25 @@
 <?php
-$kiek_isgerei = rand(0, 10);
-$barnio_riba = rand(1, 4);
-$blogai = $kiek_isgerei - $barnio_riba;
-$gerai = $barnio_riba - $kiek_isgerei;
+$bool = true;
+$str = "1";
+$flt = 1.23;
+$int = 1;
 $text = null;
-if ($kiek_isgerei > $barnio_riba) {
-    $text = "Zmona barsis, nes isgerei $blogai bokalais per daug";
-} elseif ($barnio_riba >= $kiek_isgerei) {
-    $text = "Zmona nesibars nes galejai isgerti dar $gerai bokalais daugiau";
+$text2 =null;
+$text3 =null;
+if ($bool === $int) {
+    $text = "Lyginame bool ir int: Identiski";
+} elseif ($bool == $int) {
+    $text = "Lyginame bool ir int: Vienoda verte, taciau ne identiski";
+}
+if ($str === $bool) {
+    $text2 = "Lyginame str ir bool: Identiski";
+} elseif ($str == $bool) {
+    $text2 = "Lyginame str ir bool: Vienoda verte, taciau ne identiski";
+}
+if ($flt === $str) {
+    $text3 = "Lyginame flt ir str: Identiski";
+} elseif ($flt == $str) {
+    $text3 = "Lyginame flt ir str: Vienoda verte, taciau ne identiski";
 }
 ?>
 
@@ -18,7 +30,9 @@ if ($kiek_isgerei > $barnio_riba) {
         <title></title>
     </head>
     <body>
-        <h1><?php print $text; ?></h1>
+        <h1><?php print $text?></h1>
+        <h1><?php print $text2?></h1>
+        <h1><?php print $text3?></h1>
 
     </body>
 </html>
