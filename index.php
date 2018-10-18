@@ -1,15 +1,13 @@
 <?php
-$grizai_velai =rand(0, 1);
-$grizai_isgeres =rand(0, 1);  
-$text =null;
-if ($grizai_velai && $grizai_isgeres){
-    $text = 'Miegosi ant sofos, nes grizai velai ir isgeres';
-} elseif ($grizai_isgeres){
-$text = 'Nemiegosi ant sofos, nes negrizai isgeres';
-} elseif ($grizai_velai){
-$text = 'Nemiegosi ant sofos, nes negrizai velai';
-} else {
-$text = 'Nemiegosi ant sofos, nes negrizai nei velai nei isgeres';
+$kiek_isgerei = rand(0, 10);
+$barnio_riba = rand(1, 4);
+$blogai = $kiek_isgerei - $barnio_riba;
+$gerai = $barnio_riba - $kiek_isgerei;
+$text = null;
+if ($kiek_isgerei > $barnio_riba) {
+    $text = "Zmona barsis, nes isgerei $blogai bokalais per daug";
+} elseif ($barnio_riba >= $kiek_isgerei) {
+    $text = "Zmona nesibars nes galejai isgerti dar $gerai bokalais daugiau";
 }
 ?>
 
@@ -20,7 +18,7 @@ $text = 'Nemiegosi ant sofos, nes negrizai nei velai nei isgeres';
         <title></title>
     </head>
     <body>
-        <h1><?php print $text ?></h1>
-        
+        <h1><?php print $text; ?></h1>
+
     </body>
 </html>
