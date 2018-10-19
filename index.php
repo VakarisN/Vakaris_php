@@ -1,25 +1,16 @@
 <?php
-$x = 10;
-$y = 2;
-$kiekis = $x;
-$i = null;
-for ($i = 0; $x < 40; $i++) {
-    $text = print nl2br("Dabartinė \$x vertė: $x\n");
-    $x += $y;
+$fridge = ['Jogurtas', 'Kebabas', 'Alus', 'Sugede vaisiai', 'Supuves avokadas'];
+$text =null;
+foreach ($fridge as $produktas){
+  $text .= $produktas. ' '; 
 }
-if ($x>=20) {
-    print 'Ciklas nutrauktas';
-}
+
 ?>
 <html>
     <head>
-        <title>Antra užduotis</title>
+        <title>Foreach</title>
     </head>
-    <body>
-        <p>
-            <?php
-            $text;
-            ?>
-        </p>
-    </body>
+   <body>
+       <div> <?php print $text?> </div>
+   </body>
 </html>
