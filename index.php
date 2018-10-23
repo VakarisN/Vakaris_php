@@ -1,15 +1,40 @@
 <?php
-$fridge = ['Jogurtas', 'Kebabas', 'Alus', 'Sugede vaisiai', 'Supuves avokadas'];
-$text = null;
-foreach ($fridge as $produktas) {
-    $text .= $produktas . ' ';
+$panos = [
+    ['vardas' => 'Monika',
+        'grazi' => true,
+        'protinga' => false,
+    ],
+    ['vardas' => 'Greta',
+        'grazi' => true,
+        'protinga' => true,
+    ],
+    ['vardas' => 'Kamile',
+        'grazi' => false,
+        'protinga' => true,
+    ],
+    ['vardas' => 'Ilona',
+        'grazi' => true,
+        'protinga' => true,
+    ],
+    ['vardas' => 'Toma',
+        'grazi' => true,
+        'protinga' => false,
+    ]
+];
+
+$grazios_panos = [];
+foreach ($panos as $pana) {
+    if ($pana['grazi'] && $pana['protinga']) {
+        $grazios_panos[] = $pana['vardas'];
+    }
 }
 ?>
 <html>
-    <head>
-        <title>Foreach</title>
-    </head>
     <body>
-        <div> <?php print $fridge[rand(0, 4)]; ?> </div>
+        <?php foreach ($grazios_panos as $vardas): ?>
+            <h1>
+                Grazi ir protinga: <?php print $vardas; ?>
+            </h1>
+        <?php endforeach; ?>
     </body>
 </html>
