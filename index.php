@@ -1,7 +1,12 @@
 <?php
-if ($_POST['skaicius']) {
-    $skaicius = $_POST['skaicius'];
-    $atsakymas = $skaicius ** 2;
+$answer = "Ivesk skaiciu madafaker";
+if (isset($_POST['skaicius'])) {
+    $skaicius = $_POST ['skaicius'];
+    $answer = 'Answer: ' . kvadratas($skaicius);
+}
+
+function kvadratas($skaicius) {
+    return $skaicius ** 2;
 }
 ?>
 <html>
@@ -11,8 +16,8 @@ if ($_POST['skaicius']) {
     </head>
     <body>
         <form action="index.php" method="POST">
-            Pakelti kvadratu: <input name="skaicius" type="text"/>
-            <?php print$atsakymas ?>
+            Pakelti kvadratu madafaker: <input name="skaicius" type="text"/>
+            <?php print $answer; ?>
             <input type="submit"/>
         </form>
     </body>
