@@ -1,40 +1,41 @@
 <?php
 $panos = [
-    ['vardas' => 'Monika',
-        'grazi' => true,
-        'protinga' => false,
+    [
+        'vardas' => 'Monika',
+        'Grazi' => true,
+        'protinga' => false
     ],
-    ['vardas' => 'Greta',
-        'grazi' => true,
-        'protinga' => true,
+    [
+        'vardas' => 'Greta',
+        'Grazi' => true,
+        'protinga' => true
     ],
-    ['vardas' => 'Kamile',
-        'grazi' => false,
-        'protinga' => true,
+    [
+        'vardas' => 'Laura',
+        'Grazi' => false,
+        'protinga' => true
     ],
-    ['vardas' => 'Ilona',
-        'grazi' => true,
-        'protinga' => true,
+    [
+        'vardas' => 'Viktorija',
+        'Grazi' => true,
+        'protinga' => true
     ],
-    ['vardas' => 'Toma',
-        'grazi' => true,
-        'protinga' => false,
+    [
+        'vardas' => 'Aldona',
+        'Grazi' => true,
+        'protinga' => true
     ]
 ];
+$tekstas = $panos[rand (0, count($panos) - 1)]['vardas'];
 
-$grazios_panos = [];
-foreach ($panos as $pana) {
-    if ($pana['grazi'] && $pana['protinga']) {
-        $grazios_panos[] = $pana['vardas'];
-    }
-}
+
 ?>
 <html>
     <body>
-        <?php foreach ($grazios_panos as $vardas): ?>
-            <h1>
-                Grazi ir protinga: <?php print $vardas; ?>
-            </h1>
-        <?php endforeach; ?>
+
+        <p>
+            <?php print $tekstas ?>
+        </p>
     </body>
 </html>
+
